@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/channary/Documents/Learn/sunrise/AI_course/homework/assignment/fastApi%26ML/mlruns/0/b6270776954b45f0b48e71195d43b42f/artifacts
+end_time: 1746944728098
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: b6270776954b45f0b48e71195d43b42f
+run_name: SVM
+run_uuid: b6270776954b45f0b48e71195d43b42f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1746944726579
+status: 3
+tags: []
+user_id: channary
