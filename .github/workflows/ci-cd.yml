@@ -43,10 +43,10 @@ jobs:
 
       - name: Configure DVC Remote
         run: |
-          dvc remote add origin https://dagshub.com/${{ secrets.pechnary15 }}/${{ secrets.wine-classification }}.dvc
+          dvc remote add origin https://dagshub.com/${{ secrets.pechnary15 }}/${{ secrets.DAGSHUB_REPO }}.dvc
           dvc remote modify origin --local auth basic
-          dvc remote modify origin --local user ${{ secrets.pechnary15 }}
-          dvc remote modify origin --local password ${{ secrets.384668c8ba37f965f036d7f22beb93e75cb56287 }}
+          dvc remote modify origin --local user ${{ secrets.DAGSHUB_USER }}
+          dvc remote modify origin --local password ${{ secrets.DAGSHUB_TOKEN }}
 
       - name: Commit and Push Model to DAGsHub
         run: |
