@@ -4,8 +4,8 @@ import joblib
 import numpy as np
 
 # Load the trained model and scaler
-model = joblib.load('/Users/channary/Documents/Learn/sunrise/AI_course/homework/assignment/fastApi&ML/models/Logistic Regression_best_model.joblib')  # Path to the model
-scaler = joblib.load('/Users/channary/Documents/Learn/sunrise/AI_course/homework/assignment/fastApi&ML/models/scaler_all_features.joblib')  # Path to the scaler
+model = joblib.load('/models/Logistic Regression_best_model.joblib')  # Path to the model
+scaler = joblib.load('/models/scaler_all_features.joblib')  # Path to the scaler
 
 # Initialize FastAPI app
 app = FastAPI()
