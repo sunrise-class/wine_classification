@@ -96,7 +96,7 @@ jobs:
 
       - name: Pull model with DVC
         run: |
-          dvc pull --yes
+          dvc pull
         env:
           DVC_TOKEN: ${{ secrets.DAGSHUB_TOKEN }}
 
