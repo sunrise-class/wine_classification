@@ -17,5 +17,3 @@ ENV/
 mlruns/
 .DS_Store
 Thumbs.db
-.dvc
-.dvcignore
