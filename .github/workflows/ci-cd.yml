@@ -40,7 +40,7 @@ on:
 
 jobs:
   test:
-    name: Run FastAPI Tests
+    name: test
     runs-on: ubuntu-latest
 
     steps:
@@ -74,7 +74,7 @@ jobs:
           curl -X GET http://127.0.0.1:8080/docs || exit 1
 
   deploy:
-    name: Deploy FastAPI App
+    name: Deploy
     needs: test
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
