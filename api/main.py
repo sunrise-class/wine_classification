@@ -10,6 +10,7 @@ scaler = joblib.load('/Users/channary/Documents/Learn/sunrise/AI_course/homework
 # Initialize FastAPI app
 app = FastAPI()
 
+
 # Define the request body structure for FastAPI to accept all 13 features
 class WineFeatures(BaseModel):
     alcohol: float
