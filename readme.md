@@ -45,3 +45,66 @@ This project demonstrates a complete machine learning lifecycle for **wine class
 ```bash
 git clone https://github.com/sunrise-class/wine_classification.git
 cd wine-classification
+```
+
+2. Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+
+3. Initialize DVC and add remote storage (if not already done):
+
+```bash
+dvc init
+dvc remote add -d myremote <your-remote-storage-url>
+```
+
+4. Pull datasets and models tracked by DVC
+```bash
+dvc pull
+```
+
+
+Usage
+Data Preprocessing
+Run the preprocessing script to clean and transform the raw data:
+
+bash
+Copy
+Edit
+python preprocess.py
+Preprocessed data is saved to data/processed and tracked by DVC.
+
+Model Training and Experiment Tracking
+Train your classification model and log experiments with MLflow:
+
+bash
+Copy
+Edit
+python train.py
+Launch MLflow UI locally to visualize experiments:
+
+bash
+Copy
+Edit
+mlflow ui
+Visit http://127.0.0.1:5000 in your browser.
+
+Running the API Server
+Serve the trained model via FastAPI:
+
+bash
+Copy
+Edit
+uvicorn api.main:app --reload
+API documentation is available at:
+http://127.0.0.1:8000/docs
+
+CI/CD Automation with GitHub Actions
+Testing: Automatically runs unit tests and integration tests on every push to the main branch.
+
+Data & Model Sync: Pulls latest datasets and models with DVC using DAGsHub token.
+
+Deployment: Deploys the FastAPI app on merge to the main branch (deployment step placeholder — customize for your target platform).

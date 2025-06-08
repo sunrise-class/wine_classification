@@ -3,3 +3,4 @@ mlflow
 joblib
 fastapi
 uvicorn
+dvc
