@@ -17,3 +17,4 @@ ENV/
 mlruns/
 .DS_Store
 Thumbs.db
+data

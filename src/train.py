@@ -21,6 +21,10 @@ X = scaler.fit_transform(X)
 # Split the dataset into training and testing sets (80/20)
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
+mlflow.set_tracking_uri("https://dagshub.com/pechnary15/wine-classification.mlflow")
+mlflow.set_tracking_uri("https://pechnary15:384668c8ba37f965f036d7f22beb93e75cb56287@dagshub.com/pechnary15/wine-classification.mlflow")
+
+
 # Define function to log models, hyperparameters, and metrics
 def log_model(model_name, model, params, metrics):
     with mlflow.start_run(run_name=model_name):  # Set the run name to model name
