@@ -3,4 +3,3 @@ mlflow
 joblib
 fastapi
 uvicorn
-pytest
