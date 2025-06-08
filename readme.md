@@ -13,17 +13,17 @@ This project demonstrates a complete machine learning lifecycle for **wine class
 ---
 
 ## Project Structure
-├── api/ # FastAPI app source code
-├── data/
-│ ├── raw/ # Raw datasets (tracked by DVC)
-│ └── processed/ # Preprocessed datasets
-├── models/ # Saved trained models (tracked by DVC)
-├── preprocess.py # Data preprocessing script
-├── train.py # Model training and experiment logging script
-├── requirements.txt # Python dependencies
-├── dvc.yaml # DVC pipeline stages
-├── .github/workflows/ # GitHub Actions workflows for CI/CD
-└── README.md # Project documentation
+* ├── api/ # FastAPI app source code
+* ├── data/
+* │ ├── raw/ # Raw datasets (tracked by DVC)
+* │ └── processed/ # Preprocessed datasets
+* ├── models/ # Saved trained models (tracked by DVC)
+* ├── preprocess.py # Data preprocessing script
+* ├── train.py # Model training and experiment logging script
+* ├── requirements.txt # Python dependencies
+* ├── dvc.yaml # DVC pipeline stages
+* ├── .github/workflows/ # GitHub Actions workflows for CI/CD
+* └── README.md # Project documentation
 
 
 ---
