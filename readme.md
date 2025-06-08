@@ -67,42 +67,46 @@ dvc pull
 ```
 
 
-Usage
-Data Preprocessing
+## Usage
+
+### Data Preprocessing
+
 Run the preprocessing script to clean and transform the raw data:
 
-bash
-Copy
-Edit
-python preprocess.py
+```bash
+python src/preprocess.py
+```
+
 Preprocessed data is saved to data/processed and tracked by DVC.
 
 Model Training and Experiment Tracking
 Train your classification model and log experiments with MLflow:
 
-bash
-Copy
-Edit
-python train.py
+```bash
+python src/train.py
+python src/model_selection.py
+python src/save_wine_data.py
+```
+
 Launch MLflow UI locally to visualize experiments:
 
-bash
-Copy
-Edit
+```bash
 mlflow ui
+```
 Visit http://127.0.0.1:5000 in your browser.
 
 Running the API Server
 Serve the trained model via FastAPI:
 
-bash
-Copy
-Edit
+```bash
 uvicorn api.main:app --reload
+```
+
 API documentation is available at:
 http://127.0.0.1:8000/docs
 
-CI/CD Automation with GitHub Actions
+## CI/CD Automation with GitHub Actions
+
 Testing: Automatically runs unit tests and integration tests on every push to the main branch.
 
 Data & Model Sync: Pulls latest datasets and models with DVC using DAGsHub token.
