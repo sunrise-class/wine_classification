@@ -43,5 +43,5 @@ This project demonstrates a complete machine learning lifecycle for **wine class
 1. Clone the repository:
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/sunrise-class/wine_classification.git
 cd wine-classification
