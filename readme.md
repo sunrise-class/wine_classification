@@ -107,6 +107,8 @@ http://127.0.0.1:8000/docs
 
 ## CI/CD Automation with GitHub Actions
 
+github ci cd path: .github/workflows/ci-cd.yml
+
 Testing: Automatically runs unit tests and integration tests on every push to the main branch.
 
 Data & Model Sync: Pulls latest datasets and models with DVC using DAGsHub token.
