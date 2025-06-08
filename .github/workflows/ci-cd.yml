@@ -31,8 +31,6 @@
 #          sleep 5
 #          curl -f http://127.0.0.1:8000/docs || exit 1
 
-
-
 name: CI/CD Pipeline
 
 on:
@@ -53,29 +51,30 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: 3.10
+          cache: 'pip'
 
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
-          pip install dvc
+          pip install dvc[gs,s3,azure,ssh,webdav,oss]  # installs DAGsHub-compatible remotes
 
       - name: Pull model with DVC
         run: |
-          dvc pull
+          dvc pull --yes
         env:
           DVC_TOKEN: ${{ secrets.DAGSHUB_TOKEN }}
 
       - name: Run FastAPI
         run: |
-          uvicorn api.main:app --host 127.0.0.1 --port 8000 &
+          uvicorn api.main:app --host 127.0.0.1 --port 8080 &
           sleep 5
 
       - name: Test FastAPI endpoint
         run: |
-          curl -X GET http://127.0.0.1:8000/docs || exit 1
+          curl -X GET http://127.0.0.1:8080/docs || exit 1
 
   deploy:
-    name: Deploy FastAPI (optional)
+    name: Deploy FastAPI App
     needs: test
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
@@ -88,19 +87,20 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: 3.10
+          cache: 'pip'
 
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
-          pip install dvc
+          pip install dvc[gs,s3,azure,ssh,webdav,oss]
 
       - name: Pull model with DVC
         run: |
-          dvc pull
+          dvc pull --yes
         env:
           DVC_TOKEN: ${{ secrets.DAGSHUB_TOKEN }}
 
-      - name: Deploy placeholder
+      - name: Deploy Step (Placeholder)
         run: |
-          echo "Deploy FastAPI to Render/Heroku/etc"
+          echo "Deploy FastAPI to Render/Heroku/VPS here"
 
