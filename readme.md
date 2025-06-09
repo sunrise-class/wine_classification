@@ -36,17 +36,22 @@ This project demonstrates a complete machine learning lifecycle for **wine class
 - Git
 - DVC
 - MLflow
-- (Optional) Airflow
+- airflow
 
 ### Installation
 
 1. Clone the repository:
+
+#### github
 
 ```bash
 git clone https://github.com/sunrise-class/wine_classification.git
 cd wine-classification
 ```
 
+#### dagshub
+https://dagshub.com/pechnary15/wine-classification.git
+![Screenshot 2025-06-09 at 8.01.22 PM.png](Screenshot%202025-06-09%20at%208.01.22%20PM.png)
 2. Install dependencies:
 
 ```bash
@@ -104,6 +109,8 @@ uvicorn api.main:app --reload
 
 API documentation is available at:
 http://127.0.0.1:8000/docs
+
+![Screenshot 2025-06-09 at 8.09.09 PM.png](Screenshot%202025-06-09%20at%208.09.09%20PM.png)
 
 ## CI/CD Automation with GitHub Actions
 
